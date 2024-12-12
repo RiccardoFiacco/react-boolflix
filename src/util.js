@@ -5,14 +5,14 @@ export const uriMovieBase = "https://api.themoviedb.org/3/discover/movie?api_key
 export const uriFilterMovieBase = "https://api.themoviedb.org/3/search/movie?api_key=3a55960cb8d2cc735fc2a215dc42af3e";
 export const uriFilterTvBase = "https://api.themoviedb.org/3/search/tv?api_key=3a55960cb8d2cc735fc2a215dc42af3e";
 
-export function axiosSetCall(uri, callback) {
+export function axiosSetCall(uri, setterValue) {
     axios
       .get(uri)
       .then((res) => {
-        callback(res.data.results)
+        setterValue(res.data.results)
       })
       .catch((err) => {
-        callback(err);
+        setterValue(err);
       });
 }
 
@@ -25,4 +25,25 @@ export  function searchFunction(string){ //funzione per ricercare serie o film p
     let query = "&query=";
     const stringToSearch = query + string.trim().split(' ').join('+')
     return stringToSearch  
+}
+
+export function flagImage(original_language){
+    let img;
+    switch(original_language){
+        case "en" :
+            img= "https://flagpedia.net/data/flags/w580/gb.webp"      
+            break;
+        case "it":
+            img = "https://flagpedia.net/data/flags/w580/it.webp"    
+            break;
+        case "de":
+            img = "https://flagpedia.net/data/flags/w580/de.webp"    
+            break;
+        case "es":
+            img = "https://flagpedia.net/data/flags/w580/es.webp"   
+            break;
+        default:
+            break; 
+    }
+    return img
 }
