@@ -4,7 +4,7 @@ export const uriTvBase = "https://api.themoviedb.org/3/discover/tv?api_key=3a559
 export const uriMovieBase = "https://api.themoviedb.org/3/discover/movie?api_key=3a55960cb8d2cc735fc2a215dc42af3e";
 export const uriFilterMovieBase = "https://api.themoviedb.org/3/search/movie?api_key=3a55960cb8d2cc735fc2a215dc42af3e";
 export const uriFilterTvBase = "https://api.themoviedb.org/3/search/tv?api_key=3a55960cb8d2cc735fc2a215dc42af3e";
-
+export const imagePath = "https://image.tmdb.org/t/p/w154"
 export function axiosSetCall(uri, setterValue) {
     axios
       .get(uri)

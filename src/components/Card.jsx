@@ -1,4 +1,4 @@
-import { flagImage } from "../util";
+import { flagImage, imagePath } from "../util";
 
 export function Card({obj={}}){
 
@@ -8,6 +8,7 @@ export function Card({obj={}}){
     return(
         <>
         <div>{obj.title ?? obj.name ?? 'Titolo Assente'}</div>
+        <img src={imagePath+obj.poster_path} alt="" />
         <ol>    
             <li>original name: {obj.original_title ?? obj.original_name}</li>
             <li>language: {
