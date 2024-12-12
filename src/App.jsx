@@ -11,13 +11,17 @@ function App() {
   function changeHandler(event){ //funzione che viene eseguita al cambiamento del valore di input
     let value = event.target.value; //andiamo a dare ad una variabile il valore dell'elemento che ha scatenato l'evento
     setSearchInput(value); // aggiorno il valore della variabile reattiva
-    console.log(value)
+  }
+
+  function searchFunction(){
+    console.log("input immesso "+ searchInput)
   }
 
   return (
     <GlobalContext.Provider value={{uri_movie, uri_tv}}>
       <h1>Boolflix</h1>
       <input type='text' onChange={(e) => changeHandler(e)} name="title" value={searchInput}></input>
+      <button onClick={()=>searchFunction()}>invio</button>
     </GlobalContext.Provider>
   )
 }
