@@ -1,6 +1,7 @@
 import { axiosSetCall, changeHandler,searchFunction } from '../util.js';
 import { useEffect, useState, useContext} from 'react';
 import { GlobalContext } from '../GlobalContext.js';
+import { Card } from './Card.jsx';
 
 export function Main(){
 
@@ -30,7 +31,7 @@ export function Main(){
       setUriTv(uriTvBase);
       setUriMovie(uriMovieBase);
     }
-    
+
     return(
         <main>
             {/* input che al change chiama una funzione che modifica il valore searchInput e con valore uguale a searchInput*/}
@@ -43,7 +44,7 @@ export function Main(){
             <div>{//map per creare dei paragrafi con i titoli dei film
             movies && movies.map((movie, i)=>{
                 return(
-                    <p key={i}>{movie.title}</p>
+                    <Card ogg={movie}  key={i}/>
                 )})  
             }</div>
         
@@ -51,7 +52,7 @@ export function Main(){
             <div>{//map per creare dei paragrafi con i titoli delle serie
             tvSeries && tvSeries.map((serie, i)=>{
                 return(
-                    <p key={i}>{serie.name}</p>
+                    <Card ogg={serie}  key={i}/>
                 )
             })  
             }</div>
