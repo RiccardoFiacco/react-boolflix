@@ -57,7 +57,7 @@ export function Main() {
               return <p key={i}> {movie.title}</p>;
             })}</div> */}
       <div className="row">
-        <h3>Film</h3>
+        <h2>Film</h2>
         {//map per creare dei paragrafi con i titoli dei film
             movies && movies.map((movie, i) => {
                 return (
@@ -69,7 +69,7 @@ export function Main() {
       </div>
 
       <div className="row">
-        <h3>Serie tv</h3>
+        <h2>Serie tv</h2>
           {//map per creare dei paragrafi con i titoli delle serie
             tvSeries && tvSeries.map((serie, i) => {
                 return (

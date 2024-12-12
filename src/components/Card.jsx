@@ -8,11 +8,11 @@ export function Card({obj={}}){
     let language = flagImage(original_language);
 
     let star = getStar(vote_average);
-
+    let finalimag = imagePath+obj.poster_path
     return(
-        <>
-        <div>{obj.title ?? obj.name ?? 'Titolo Assente'}</div>
-        <img src={imagePath+obj.poster_path} alt="" />
+        <div style={{backgroundImage:`url(${finalimag})`}}>
+        <h3>{obj.title ?? obj.name ?? 'Titolo Assente'}</h3>
+        {/* </div><img src={imagePath+obj.poster_path} alt="" /> */}
         <ol>    
             <li>original name: {obj.original_title ?? obj.original_name}</li>
             <li>language: {
@@ -24,6 +24,6 @@ export function Card({obj={}}){
 
             {/* <FontAwesomeIcon icon="fa-solid fa-star" /> */}
         </ol>
-        </>
+        </div>
     )
 }
