@@ -47,3 +47,14 @@ export function flagImage(original_language){
     }
     return img
 }
+
+export function getStar(vote){
+    let app = Math.ceil(vote)/2;
+    let arr = [];
+
+    for(let i=0; i < app; i++){
+        arr.push("⭐")    
+    }
+    
+    return arr
+}
