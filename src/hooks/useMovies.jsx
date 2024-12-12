@@ -1,23 +1,25 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { GlobalContext } from "../GlobalContext";
 
 const MOVIE_API =
   "https://api.themoviedb.org/3/discover/movie?api_key=3a55960cb8d2cc735fc2a215dc42af3e";
 
-const useMovies = () => {
+function useMovies() {
+
   const [movies, setMovies] = useState([]);
 
-  const fetchData = () => {
-    axios.get(MOVIE_API).then((response) => {
+  function fetchData(url, params = {}) {
+    axios.get(url, { params }).then((response) => {
       setMovies(response.data.results);
     });
   };
 
   useEffect(() => {
-    fetchData();
+    fetchData(MOVIE_API);
   }, []);
 
   return [movies, fetchData];
-};
+}
 
 export default useMovies;
