@@ -4,8 +4,7 @@ import { GlobalContext } from "../GlobalContext.js";
 import { Card } from "./Card.jsx";
 import useMovies from "../hooks/useMovies.jsx";
 export function Main() {
-  const { uriTvBase, uriMovieBase, uriFilterMovieBase, uriFilterTvBase } =
-    useContext(GlobalContext);
+  const { uriTvBase, uriMovieBase, uriFilterMovieBase, uriFilterTvBase } =useContext(GlobalContext);
 
   const [uriTv, setUriTv] = useState(uriTvBase);
   const [uriMovie, setUriMovie] = useState(uriMovieBase);
@@ -28,7 +27,7 @@ export function Main() {
   //   setUriTv(uriFilterTvBase + query);
   //   setUriMovie(uriFilterMovieBase + query);
   // }
-  
+
   function changeHandler(event, callback){ //funzione che viene eseguita al cambiamento del valore di input
       let value = event.target.value; //andiamo a dare ad una variabile il valore dell'elemento che ha scatenato l'evento
       callback(value); // aggiorno il valore della variabile reattiva
@@ -42,37 +41,44 @@ export function Main() {
   }
 
   return (
-    <main>
-      {/* input che al change chiama una funzione che modifica il valore searchInput e con valore uguale a searchInput*/}
-      <input type="text" onChange={(e) => changeHandler(e, setSearchInput)} name="title" value={searchInput} ></input>
-      {/*button che al click esegue la funzione search function e l'altra resetta tutto*/}
-      {/*<button onClick={onSubmit}>invio</button>*/}
-      <button onClick={reset}>reset</button>
-      {/* <h3>prova fetch</h3>
-      <div>{movies2.map((movie, i) => {
+    <main className="container">
+      <div className="row">
+        <div className="col">
+          {/* input che al change chiama una funzione che modifica il valore searchInput e con valore uguale a searchInput*/}
+          <input type="text" onChange={(e) => changeHandler(e, setSearchInput)} name="title" value={searchInput} ></input>
+          {/*button che al click esegue la funzione search function e l'altra resetta tutto*/}
+          {/*<button onClick={onSubmit}>invio</button>*/}
+          <button onClick={reset}>reset</button>
+        </div>
+      </div>
+      
+            {/* <h3>prova fetch</h3>
+            <div>{movies2.map((movie, i) => {
               return <p key={i}> {movie.title}</p>;
             })}</div> */}
-      <h3>Film</h3>
-      <div>
-        {
-          //map per creare dei paragrafi con i titoli dei film
-          movies &&
-            movies.map((movie, i) => {
-              return <Card obj={movie} key={i} />;
-            })
-        }
+      <div className="row">
+        <h3>Film</h3>
+        {//map per creare dei paragrafi con i titoli dei film
+            movies && movies.map((movie, i) => {
+                return (
+                  <div className="col"key={i} >
+                    <Card obj={movie} />
+                  </div>)   
+              })
+        }  
       </div>
 
-      <h3>Serie tv</h3>
-      <div>
-        {
-          //map per creare dei paragrafi con i titoli delle serie
-          tvSeries &&
-            tvSeries.map((serie, i) => {
-              return <Card obj={serie} key={i} />;
-            })
-        }
-      </div>
+      <div className="row">
+        <h3>Serie tv</h3>
+          {//map per creare dei paragrafi con i titoli delle serie
+            tvSeries && tvSeries.map((serie, i) => {
+                return (
+                <div className="col"key={i} >
+                  <Card obj={serie} />
+                </div>);
+              })
+          }  
+      </div> 
     </main>
   );
 }
