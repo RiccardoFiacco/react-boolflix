@@ -1,10 +1,10 @@
-export function Card({ogg={}}){
-    console.log(ogg)
+export function Card({obj={}}){
+    const {original_language, vote_average} = obj;
     return(
-        <ol>{ogg.title? ogg.title : ogg.name}
-            <li>{ogg.original_title ? ogg.original_title : ogg.original_name}</li>
-            <li>{ogg.original_language}</li>
-            <li>{ogg.vote_average}</li>
+        <ol>{obj.title? obj.title : obj.name}
+            <li>{obj.original_title ? obj.original_title : obj.original_name}</li>
+            <li>{original_language}</li>
+            <li>{vote_average}</li>
         </ol>
     )
 }

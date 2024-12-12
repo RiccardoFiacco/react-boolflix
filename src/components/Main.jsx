@@ -44,17 +44,18 @@ export function Main(){
             <div>{//map per creare dei paragrafi con i titoli dei film
             movies && movies.map((movie, i)=>{
                 return(
-                    <Card ogg={movie}  key={i}/>
-                )})  
+                    <Card obj={movie}  key={i}/>
+                )
+             })  
             }</div>
         
             <h3>Serie tv</h3>
             <div>{//map per creare dei paragrafi con i titoli delle serie
             tvSeries && tvSeries.map((serie, i)=>{
                 return(
-                    <Card ogg={serie}  key={i}/>
+                    <Card obj={serie}  key={i}/>
                 )
-            })  
+             })  
             }</div>
         </main>
     )
