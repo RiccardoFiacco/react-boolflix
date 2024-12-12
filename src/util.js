@@ -4,7 +4,7 @@ export function axiosSetCall(uri, callback) {
     axios
       .get(uri)
       .then((res) => {
-        callback(res.data)
+        callback(res.data.results)
       })
       .catch((err) => {
         callback(err);
@@ -14,4 +14,8 @@ export function axiosSetCall(uri, callback) {
 export function changeHandler(event, callback){ //funzione che viene eseguita al cambiamento del valore di input
     let value = event.target.value; //andiamo a dare ad una variabile il valore dell'elemento che ha scatenato l'evento
     callback(value); // aggiorno il valore della variabile reattiva
+}
+
+export  function searchFunction(string){ //funzione per ricercare serie o film per nome
+    console.log("input immesso "+ string)
 }
