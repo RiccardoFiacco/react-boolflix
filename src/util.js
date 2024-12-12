@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export function axiosCall(uri, callback) {
+export function axiosSetCall(uri, callback) {
     axios
       .get(uri)
       .then((res) => {
