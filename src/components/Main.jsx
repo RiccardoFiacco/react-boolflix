@@ -8,12 +8,12 @@ export function Main() {
 
   return (
     <main className="container">
-      <div className="row row-gap-3">
+      <div className="row row-gap-3 column-gap-3">
         <h2>Film</h2>
         {//map per creare dei paragrafi con i titoli dei film
             movies && movies.map((movie, i) => {
                 return (
-                  <div className="col-8 col-md-6 col-lg-3 "key={i} >
+                  <div className="col col-sm-6 col-lg"key={i} >
                     <Card obj={movie} />
                   </div>)   
               })

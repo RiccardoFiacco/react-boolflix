@@ -20,8 +20,9 @@ export function Filter(){
         setUriMovie(uriMovieBase);
     }
     return(
-        <div className="col-4">
-            <div className={`row ${style.align_center}`}>
+        <div className="col-3">
+            
+            <div className={`${style.flex} ${style.align_center}`}>
                 <div className="col">
                     {/* input che al change chiama una funzione che modifica il valore searchInput e con valore uguale a searchInput*/}
                     <input 
@@ -40,6 +41,7 @@ export function Filter(){
                     className="btn btn-danger ms-3">reset</button>
                 </div>
             </div>
+            
         </div>
     )
 }
