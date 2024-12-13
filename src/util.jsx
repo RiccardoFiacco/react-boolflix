@@ -1,10 +1,14 @@
 import axios from "axios";
+import { faStar } from "@fortawesome/free-solid-svg-icons"
+import { faStar as starRegular } from "@fortawesome/free-regular-svg-icons"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const uriTvBase = "https://api.themoviedb.org/3/discover/tv?api_key=3a55960cb8d2cc735fc2a215dc42af3e";
 export const uriMovieBase = "https://api.themoviedb.org/3/discover/movie?api_key=3a55960cb8d2cc735fc2a215dc42af3e";
 export const uriFilterMovieBase = "https://api.themoviedb.org/3/search/movie?api_key=3a55960cb8d2cc735fc2a215dc42af3e";
 export const uriFilterTvBase = "https://api.themoviedb.org/3/search/tv?api_key=3a55960cb8d2cc735fc2a215dc42af3e";
 export const imagePath = "https://image.tmdb.org/t/p/w342"
+
 export function axiosSetCall(uri, setterValue) {
     axios
       .get(uri)
@@ -56,11 +60,15 @@ export function flagImage(original_language){
 }
 
 export function getStar(vote){
-    let app = Math.ceil(vote)/2;
+    let app = Math.ceil(vote/2);
     let arr = [];
-
+    
     for(let i=0; i < app; i++){
-        arr.push("⭐")    
+        arr.push(<FontAwesomeIcon icon={faStar}/>)    
+    }
+
+    for(let i=0; i < 5-app; i++){
+        arr.push(<FontAwesomeIcon icon={starRegular} />)     
     }
     
     return arr
