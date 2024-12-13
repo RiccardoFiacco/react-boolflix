@@ -1,9 +1,10 @@
 import './App.css';
 import { GlobalContext } from './GlobalContext.js';
-import { Header } from './components/Header.jsx';
-import { Main } from './components/Main.jsx';
 import { useEffect, useState } from 'react';
 import {uriTvBase, uriMovieBase, axiosSetCall} from './util.jsx'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { DefaultPage } from './pages/DefaultPage.jsx';
+import { Home } from './pages/Home.jsx';
 
 
 function App() {
@@ -24,9 +25,13 @@ function App() {
       movies, setMovies, 
       tvSeries, setTvSeries
     }}>{/*usiamo un context per rendere globali a tutti i componenti quei valori*/}
-        <Header/>
-        <Main/>
-        
+      <BrowserRouter>
+        <Routes>
+          <Route Component={DefaultPage}>
+            <Route index Component={Home}/>
+          </Route> 
+        </Routes>
+      </BrowserRouter>
     </GlobalContext.Provider>
   )
 }
