@@ -11,10 +11,10 @@ export function Card({obj={}}){
     let finalimag = imagePath+obj.poster_path
     return(
         <div style={{backgroundImage:`url(${finalimag})`}}>
-        <h3>{obj.title ?? obj.name ?? 'Titolo Assente'}</h3>
+        <h3>{obj.title}</h3>
         {/* </div><img src={imagePath+obj.poster_path} alt="" /> */}
         <ol>    
-            <li>original name: {obj.original_title ?? obj.original_name}</li>
+            <li>original name: {obj.original_title}</li>
             <li>language: {
                 language ? <img src={language} height="25px" alt=""/> : original_language
             }</li>

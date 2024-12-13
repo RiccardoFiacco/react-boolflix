@@ -9,7 +9,14 @@ export function axiosSetCall(uri, setterValue) {
     axios
       .get(uri)
       .then((res) => {
-        setterValue(res.data.results)
+        const mappedCatalogue = res.data.results.map((element)=>{
+            return{
+                ...element,
+                title : element.name ?? element.title,
+                original_title : element.original_name?? element.original_title
+            }
+        })
+        setterValue(mappedCatalogue)
       })
       .catch((err) => {
         setterValue(err);
