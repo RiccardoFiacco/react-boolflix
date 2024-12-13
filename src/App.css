@@ -22,3 +22,12 @@
 .relative{
     position: relative;
 }
+
+.nav_link{
+    text-decoration: none;
+    font-size: 15px;
+    color: gray;
+}
+.active{
+    color: crimson;
+}
