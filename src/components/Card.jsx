@@ -1,8 +1,5 @@
-import { flagImage, imagePath } from "../util";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from "@fortawesome/free-solid-svg-icons"
-import { faStar as starRegular } from "@fortawesome/free-regular-svg-icons"
-import { getStar } from "../util";
+import { flagImage, imagePath } from "../util.jsx";
+import { getStar } from "../util.jsx";
 
 export function Card({obj={}}){
 
@@ -21,10 +18,7 @@ export function Card({obj={}}){
                     <li>language: {
                         language ? <img src={language} height="25px" alt=""/> : original_language
                     }</li>
-                    <li>avarage vote: {star}</li>
-
-                    <FontAwesomeIcon icon={starRegular} />
-                    
+                    <li>avarage vote: {star}</li> 
                 </ol>
             </div>
         </div>

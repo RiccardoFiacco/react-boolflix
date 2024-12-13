@@ -3,7 +3,7 @@ import { GlobalContext } from './GlobalContext.js';
 import { Header } from './components/Header.jsx';
 import { Main } from './components/Main.jsx';
 import { useEffect, useState } from 'react';
-import {uriTvBase, uriMovieBase, axiosSetCall} from './util.js'
+import {uriTvBase, uriMovieBase, axiosSetCall} from './util.jsx'
 
 
 function App() {
