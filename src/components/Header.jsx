@@ -1,13 +1,12 @@
 import { Filter } from "./Filter/Filter";
-
+import { Navigation } from "./Navigation";
 export function Header(){
-    
 
     return(
         <header className="bg-black">    
-                <div className="d-flex justify-content-between pb-3 pt-3 ps-4">
-                    <div className="col-3">
-                        <h1 className="text-danger">Boolflix</h1>
+                <div className="row justify-content-between pb-3 pt-3 ps-4">
+                    <div className="col-8">
+                        <Navigation/>
                     </div>
                     <div className="col-3">
                         <Filter/>
