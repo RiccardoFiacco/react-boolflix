@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export function Navigation(){
     return(
-        <div className="row align-items-center ">
+        <div className="row align-items-center justify-content-center">
             <div className="col">
                 <h1 className="text-danger">Boolflix</h1>
             </div>
@@ -23,7 +23,7 @@ export function Navigation(){
                 <NavLink className="nav_link" to="/AggiuntiRecente">Aggiunti di Recente</NavLink>
             </div>
             <div className="col">
-                <NavLink className="nav_link" to="/LaMiaLista">La Mia Lista di Recente</NavLink>
+                <NavLink className="nav_link" to="/LaMiaLista">La Mia Lista</NavLink>
             </div>   
         </div>
     )
