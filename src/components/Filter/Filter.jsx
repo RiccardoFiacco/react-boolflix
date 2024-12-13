@@ -31,7 +31,7 @@ export function Filter(){
                     value={searchInput} 
                     className={style.input}
                 ></input>
-            </div>
+                </div>
                 {/*button che al click esegue la funzione search function e l'altra resetta tutto*/}
                 {/*<button onClick={onSubmit}>invio</button>*/}
             <div className="col">
@@ -41,5 +41,6 @@ export function Filter(){
                 </button>
             </div>
         </div>
+
     )
 }

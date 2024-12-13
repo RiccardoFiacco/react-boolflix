@@ -1,0 +1,11 @@
+.myCard{
+    background-position: center;
+    width : 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+}
+
+.h_flag{
+    width:20%;
+}
+

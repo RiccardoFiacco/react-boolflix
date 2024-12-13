@@ -26,6 +26,7 @@ function App() {
     }}>{/*usiamo un context per rendere globali a tutti i componenti quei valori*/}
         <Header/>
         <Main/>
+        
     </GlobalContext.Provider>
   )
 }

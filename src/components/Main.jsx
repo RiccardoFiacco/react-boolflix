@@ -1,6 +1,6 @@
 import {  useContext } from "react";
 import { GlobalContext } from "../GlobalContext.js";
-import { Card } from "./Card.jsx";
+import { Card } from "./Card/Card.jsx";
 
 export function Main() {
 
@@ -9,7 +9,7 @@ export function Main() {
   return (
     <main className="container">
       <div className="row row-gap-3">
-        <h2>Film</h2>
+        <h2 className="pt-5 pb-3">Film</h2>
         {//map per creare dei paragrafi con i titoli dei film
             movies && movies.map((movie, i) => {
                 return (
@@ -19,9 +19,9 @@ export function Main() {
               })
         }  
       </div>
-
+        
       <div className="row row-gap-3">
-        <h2>Serie tv</h2>
+        <h2 className="pt-5 pb-3" >Serie tv</h2>
           {//map per creare dei paragrafi con i titoli delle serie
             tvSeries && tvSeries.map((serie, i) => {
                 return (

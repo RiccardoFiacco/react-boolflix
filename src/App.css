@@ -1,18 +1,24 @@
+.hidden{
+    display: none; 
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}
 .myCard{
-    height: 500px;
     background-position: center;
-    width : 342px
+    width : 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+}
+.card.relative:hover .myCard{
+    opacity: 0.2;
 }
 
-.myCard .hidden{
-    display: none;
-}
-
-.myCard:hover{
-    background: rgb(255 255 255 / 0%);
-}
-
-.myCard:hover .hidden{
+.card.relative:hover .hidden{
     display: inline-block;
     color: black;
+}
+
+.relative{
+    position: relative;
 }

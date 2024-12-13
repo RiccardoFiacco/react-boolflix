@@ -9,9 +9,9 @@ export function Header(){
                     <div className="col-3">
                         <h1 className="text-danger">Boolflix</h1>
                     </div>
-
-                    <Filter/>
-
+                    <div className="col-3">
+                        <Filter/>
+                    </div>
                 </div>
             
         </header>   
