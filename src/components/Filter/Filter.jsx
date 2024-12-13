@@ -19,29 +19,27 @@ export function Filter(){
         setUriTv(uriTvBase);
         setUriMovie(uriMovieBase);
     }
+
     return(
-        <div className="col-3">
-            
-            <div className={`${style.flex} ${style.align_center}`}>
-                <div className="col">
-                    {/* input che al change chiama una funzione che modifica il valore searchInput e con valore uguale a searchInput*/}
-                    <input 
+        <div className="row">
+            {/* input che al change chiama una funzione che modifica il valore searchInput e con valore uguale a searchInput*/}
+            <div className="col">
+                <input 
                     type="text" 
                     onChange={(e) => changeHandler(e, setSearchInput)} 
                     name="title" 
                     value={searchInput} 
                     className={style.input}
-                    ></input>
-                </div>
+                ></input>
+            </div>
                 {/*button che al click esegue la funzione search function e l'altra resetta tutto*/}
                 {/*<button onClick={onSubmit}>invio</button>*/}
-                <div className="col">
-                    <button 
+            <div className="col">
+                <button 
                     onClick={reset}
-                    className="btn btn-danger ms-3">reset</button>
-                </div>
+                    className="btn btn-danger ms-3">reset
+                </button>
             </div>
-            
         </div>
     )
 }
