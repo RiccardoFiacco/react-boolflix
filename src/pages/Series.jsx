@@ -2,15 +2,14 @@ import { List } from "../components/List";
 import { Footer } from '../components/Footer/Footer';
 import { useContext, useEffect} from "react";
 import { GlobalContext } from "../utils/GlobalContext";
-import { uriTvBase, axiosSetCall } from "../utils/util";
+import { uriTvBase } from "../utils/util"; 
 
 export function Series(){
 
-    const {setTvSeries, setUriTv} = useContext(GlobalContext) //importo le var cglobali che mi servono 
+    const {setUriTv} = useContext(GlobalContext) //importo le var cglobali che mi servono 
     
     useEffect(() => { //hook che al montaggio del componente
         setUriTv(uriTvBase) //imposta uri da cui recuperare le serie
-        axiosSetCall(uriTvBase, setTvSeries); //esegue la funzione che mi va a settare le serie tv
     }, []);
 
     return(
