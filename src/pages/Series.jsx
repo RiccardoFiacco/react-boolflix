@@ -6,10 +6,10 @@ import { uriTvBase, axiosSetCall } from "../utils/util";
 
 export function Series(){
 
-    const {setTvSeries, setUriTv} = useContext(GlobalContext) 
+    const {setTvSeries, setUriTv} = useContext(GlobalContext) //importo le var cglobali che mi servono 
     
-    useEffect(() => {
-        setUriTv(uriTvBase)
+    useEffect(() => { //hook che al montaggio del componente
+        setUriTv(uriTvBase) //imposta uri da cui recuperare le serie
         axiosSetCall(uriTvBase, setTvSeries); 
     }, []);
 
