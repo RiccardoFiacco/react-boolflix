@@ -5,7 +5,7 @@ import { useContext, useEffect } from "react";
 import { GlobalContext } from "../utils/GlobalContext";
 
 export function HighestRated(){
-    const {setMovies, setTvSeries, setUriTv, setUriMovie} = useContext(GlobalContext)  //importo 
+    const {setMovies, setTvSeries, setUriTv, setUriMovie} = useContext(GlobalContext)  //importo le variabili globali
     let movieDesc =  uriMovieBase + "&sort_by=vote_average.desc"; //creo l'url da cui recuperare i film con valutazione maggiore
     let seriesDesc =  uriTvBase + "&sort_by=vote_average.desc"; //creo l'url da cui recuperare le serie con valutazione maggiore
 
