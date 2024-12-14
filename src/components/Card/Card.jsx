@@ -1,5 +1,5 @@
-import { flagImage, imagePath } from "../../util.jsx";
-import { getStar } from "../../util.jsx";
+import { flagImage, imagePath } from "../../utils/util.jsx";
+import { getStar } from "../../utils/util.jsx";
 import style from './Card.module.css'
 import fotoPlace from '../../assets/elementor-placeholder-image.webp'
 export function Card({ obj = {} }) {

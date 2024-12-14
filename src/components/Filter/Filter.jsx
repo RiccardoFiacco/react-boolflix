@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
-import { GlobalContext } from "../../GlobalContext";
-import { uriFilterMovieBase, uriFilterTvBase, searchFunction, uriTvBase, uriMovieBase } from "../../util.jsx";
+import { GlobalContext } from "../../utils/GlobalContext.js";
+import { uriFilterMovieBase, uriFilterTvBase, searchFunction, uriTvBase, uriMovieBase } from "../../utils/util.jsx";
 import  style  from './Filter.module.css'
 
 export function Filter(){

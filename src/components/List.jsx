@@ -1,4 +1,4 @@
-import { GlobalContext } from "../GlobalContext";
+import { GlobalContext } from "../utils/GlobalContext";
 import { Card } from "./Card/Card";
 import { useContext } from "react";
 

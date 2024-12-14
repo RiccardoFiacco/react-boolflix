@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { GlobalContext } from '../../GlobalContext';
-import { uriTvBase, uriMovieBase } from '../../util';
+import { GlobalContext } from '../../utils/GlobalContext';
+import { uriTvBase, uriMovieBase } from '../../utils/util';
 import style from './Footer.module.css'
 export function Footer(){
     let {setUriMovie, setUriTv} = useContext(GlobalContext) 

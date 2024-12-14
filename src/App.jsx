@@ -1,12 +1,12 @@
 import './App.css';
-import { GlobalContext } from './GlobalContext.js';
+import { GlobalContext } from './utils/GlobalContext.js';
 import { useEffect, useState } from 'react';
-import {uriTvBase, uriMovieBase, axiosSetCall} from './util.jsx'
+import {uriTvBase, uriMovieBase, axiosSetCall} from './utils/util.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { DefaultPage } from './pages/DefaultPage.jsx';
 import { Home } from './pages/Home.jsx';
 import { Series } from './pages/Series.jsx';
-
+import { Film } from './pages/Film.jsx';
 function App() {
   const [uriTv, setUriTv] = useState(uriTvBase);
   const [uriMovie, setUriMovie] = useState(uriMovieBase);
