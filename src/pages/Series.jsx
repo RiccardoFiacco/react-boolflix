@@ -10,7 +10,7 @@ export function Series(){
     
     useEffect(() => { //hook che al montaggio del componente
         setUriTv(uriTvBase) //imposta uri da cui recuperare le serie
-        axiosSetCall(uriTvBase, setTvSeries); 
+        axiosSetCall(uriTvBase, setTvSeries); //esegue la funzione che mi va a settare le serie tv
     }, []);
 
     return(
