@@ -30,8 +30,8 @@ function App() {
           <Route Component={DefaultPage}>
             <Route index Component={Home}/>
              <Route path='/Series' Component={Series}/>
-            {/*<Route path='/Film' Component={Film}/>
-            <Route path='/Original' Component={Original}/>
+            <Route path='/Film' Component={Film}/>
+            {/*<Route path='/Original' Component={Original}/>
             <Route path='/Recently-add' Component={RecentlyAdd}/>
             <Route path='/MyList' Component={MyList}/>
             */}
