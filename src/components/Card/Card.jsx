@@ -2,9 +2,9 @@ import { flagImage, imagePath } from "../../utils/util.jsx";
 import { getStar } from "../../utils/util.jsx";
 import style from './Card.module.css'
 import fotoPlace from '../../assets/elementor-placeholder-image.webp'
-export function Card({ obj = {} }) {
+export function Card({ obj = {}, addInList }) {
 
-  const { title, original_title, original_language, vote_average } = obj; //destructuring 
+  const { title, original_title, original_language, vote_average} = obj; //destructuring 
 
   let language = flagImage(original_language); //prende l'immagine della bandiera
 
@@ -26,6 +26,7 @@ export function Card({ obj = {} }) {
             </li>
             <li>avarage vote: {star}</li>
           </ol>
+          <button className="btn btn-outline-primary" onClick={addInList}>add in your List</button>
         </div>
       
     </div>

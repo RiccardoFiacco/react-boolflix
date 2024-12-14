@@ -4,10 +4,22 @@ import { useContext } from "react";
 
 export function List({ title=''}){
 
-    let {movies, tvSeries} = useContext(GlobalContext) 
+    let {movies, tvSeries , myList, setMyList} = useContext(GlobalContext) 
     
     let list;
-    title == "Film" ? list = movies: list = tvSeries
+    if(title == "Film"){
+      list = movies
+    }
+    if(title == "Serie tv"){
+     list = tvSeries 
+    }
+    if(title == "My List"){
+      list = myList
+    }
+
+    function addFunction(e){ 
+      setMyList([...myList, e])
+    }
 
     return(
         <div className="row row-gap-3">
@@ -16,7 +28,7 @@ export function List({ title=''}){
              list && list.map((serie, i) => {
                 return (
                 <div className="col-8 col-sm-6 col-md-4 col-lg-3" key={i} >
-                  <Card obj={serie} />
+                  <Card obj={serie} addInList = {()=>addFunction(serie)}/>
                 </div>);
               })
           }  
