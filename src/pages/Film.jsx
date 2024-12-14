@@ -5,11 +5,11 @@ import { GlobalContext } from "../utils/GlobalContext";
 import { uriMovieBase, axiosSetCall } from "../utils/util";
 export function Film(){
 
-    const {setMovies, setUriMovie} = useContext(GlobalContext) 
+    const {setMovies, setUriMovie} = useContext(GlobalContext) //importo le variabili globali che mi servono
 
-    useEffect(() => {
-        setUriMovie(uriMovieBase)
-        axiosSetCall(uriMovieBase, setMovies); 
+    useEffect(() => { //hook che al montaggio del componente
+        setUriMovie(uriMovieBase) //imposta l'uri da cui prendere i film
+        axiosSetCall(uriMovieBase, setMovies); //esegue la funzione che mi va a settare i movies
     }, []);
 
 
