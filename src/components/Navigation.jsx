@@ -17,7 +17,7 @@ export function Navigation(){
                 <NavLink className="nav_link" to="/Film">Film</NavLink>
             </div>
             <div className="col">
-                <NavLink className="nav_link" to="/Original">Originali</NavLink>
+                <NavLink className="nav_link" to="/Highest-rated">Migliori</NavLink>
             </div>
             <div className="col">
                 <NavLink className="nav_link" to="/Recently-add">Aggiunti di Recente</NavLink>
