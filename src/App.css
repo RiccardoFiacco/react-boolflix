@@ -31,3 +31,10 @@
 .active{
     color: crimson;
 }
+
+.home{
+    height: 88vh;
+    background-image:url("https://wallpapers.com/images/high/netflix-background-gs7hjuwvv2g0e9fj.webp") ;
+    color: white;
+    background-size: cover;
+}
