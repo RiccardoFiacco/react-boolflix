@@ -1,14 +1,14 @@
 import { useContext } from 'react';
 import { GlobalContext } from '../../utils/GlobalContext';
-import { uriTvBase, uriMovieBase } from '../../utils/util';
 import style from './Footer.module.css'
 export function Footer(){
-    let {setUriMovie, setUriTv} = useContext(GlobalContext) 
+    let { uriMovie ,uriTv, setUriMovie, setUriTv} = useContext(GlobalContext) 
     let choseButtonArr = [1,2,3,4,5,6,7,8,9,10]
 
     function changePage(page){
-        let currentTvPage = uriTvBase + "&page=" + page
-        let currentMoviePage = uriMovieBase + "&page=" + page
+        console.log(uriTv, uriMovie)
+        let currentTvPage = uriTv + "&page=" + page
+        let currentMoviePage = uriMovie + "&page=" + page
         setUriTv(currentTvPage)
         setUriMovie(currentMoviePage)
     }

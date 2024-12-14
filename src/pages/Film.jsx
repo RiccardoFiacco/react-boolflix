@@ -3,12 +3,12 @@ import { Footer } from '../components/Footer/Footer';
 import { useContext, useEffect} from "react";
 import { GlobalContext } from "../utils/GlobalContext";
 import { uriMovieBase, axiosSetCall } from "../utils/util";
-
 export function Film(){
 
-    const {setMovies} = useContext(GlobalContext) 
+    const {setMovies, setUriMovie} = useContext(GlobalContext) 
 
     useEffect(() => {
+        setUriMovie(uriMovieBase)
         axiosSetCall(uriMovieBase, setMovies); 
     }, []);
 

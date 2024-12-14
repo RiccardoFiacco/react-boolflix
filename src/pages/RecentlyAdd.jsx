@@ -4,16 +4,16 @@ import { uriMovieBase, uriTvBase, axiosSetCall } from "../utils/util";
 import { useContext, useEffect } from "react";
 import { GlobalContext } from "../utils/GlobalContext";
 
-export function HighestRated(){
+export function RecentlyAdd(){
     const {setMovies, setTvSeries, setUriTv, setUriMovie} = useContext(GlobalContext) 
-    let movieDesc =  uriMovieBase + "&sort_by=vote_average.desc";
-    let seriesDesc =  uriTvBase + "&sort_by=vote_average.desc";
+    let latestMovies =  uriMovieBase + "&sort_by=primary_release_date.desc";
+    let latestSeries =  uriTvBase + "&sort_by=first_air_date.desc";
 
     useEffect(() => {//use effect che al montaggio del componente invoca queste due funzioni
-        axiosSetCall(movieDesc, setMovies); //questa recupera e aggiorna la variabile movies
-        axiosSetCall(seriesDesc, setTvSeries); //questa recupera e aggiorna la variabile tvSeries    
-        setUriMovie(movieDesc)
-        setUriTv(seriesDesc)
+        axiosSetCall(latestMovies, setMovies); //questa recupera e aggiorna la variabile movies
+        axiosSetCall(latestSeries, setTvSeries); //questa recupera e aggiorna la variabile tvSeries    
+        setUriMovie(latestMovies)
+        setUriTv(latestSeries)
     }, []);
 
     return(

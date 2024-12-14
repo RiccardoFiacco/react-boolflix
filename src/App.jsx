@@ -8,6 +8,7 @@ import { Home } from './pages/Home.jsx';
 import { Series } from './pages/Series.jsx';
 import { Film } from './pages/Film.jsx';
 import { HighestRated } from './pages/HighestRated.jsx';
+import { RecentlyAdd } from './pages/RecentlyAdd.jsx';
 
 function App() {
   const [uriTv, setUriTv] = useState(uriTvBase);
@@ -34,8 +35,8 @@ function App() {
              <Route path='/Series' Component={Series}/>
             <Route path='/Film' Component={Film}/>
             <Route path='/Highest-rated' Component={HighestRated}/>
-            {/*<Route path='/Recently-add' Component={RecentlyAdd}/>
-            <Route path='/MyList' Component={MyList}/>
+            <Route path='/Recently-add' Component={RecentlyAdd}/>
+            {/*<Route path='/MyList' Component={MyList}/>
             */}
           </Route> 
         </Routes>

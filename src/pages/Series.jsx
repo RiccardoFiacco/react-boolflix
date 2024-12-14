@@ -6,9 +6,10 @@ import { uriTvBase, axiosSetCall } from "../utils/util";
 
 export function Series(){
 
-    const {setTvSeries} = useContext(GlobalContext) 
+    const {setTvSeries, setUriTv} = useContext(GlobalContext) 
     
     useEffect(() => {
+        setUriTv(uriTvBase)
         axiosSetCall(uriTvBase, setTvSeries); 
     }, []);
 
