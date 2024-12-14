@@ -5,7 +5,7 @@ import {uriTvBase, uriMovieBase, axiosSetCall} from './util.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { DefaultPage } from './pages/DefaultPage.jsx';
 import { Home } from './pages/Home.jsx';
-
+import { Series } from './pages/Series.jsx';
 
 function App() {
   const [uriTv, setUriTv] = useState(uriTvBase);
@@ -29,8 +29,8 @@ function App() {
         <Routes>
           <Route Component={DefaultPage}>
             <Route index Component={Home}/>
-            {/* <Route path='/Series' Component={Series}/>
-            <Route path='/Film' Component={Film}/>
+             <Route path='/Series' Component={Series}/>
+            {/*<Route path='/Film' Component={Film}/>
             <Route path='/Original' Component={Original}/>
             <Route path='/Recently-add' Component={RecentlyAdd}/>
             <Route path='/MyList' Component={MyList}/>
