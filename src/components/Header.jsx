@@ -6,7 +6,7 @@ export function Header(){
         <header className="bg-black">    
                 <div className="row justify-content-between pb-3 pt-3 ps-4">
                     <div className="col">
-                        <div className="nav">
+                        <div className="nav text-center">
                             <Navigation/>
                         </div>
                     </div>
