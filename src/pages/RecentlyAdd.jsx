@@ -12,8 +12,8 @@ export function RecentlyAdd(){
     useEffect(() => {//use effect che al montaggio del componente invoca queste due funzioni
         axiosSetCall(latestMovies, setMovies); //questa recupera e aggiorna la variabile movies
         axiosSetCall(latestSeries, setTvSeries); //questa recupera e aggiorna la variabile tvSeries    
-        setUriMovie(latestMovies)
-        setUriTv(latestSeries)
+        setUriMovie(latestMovies) //questa aggiorna il valore dell'uri dei movie
+        setUriTv(latestSeries) //questa aggiorna il valore dell'uri delle serie 
     }, []);
 
     return(
