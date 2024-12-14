@@ -11,19 +11,19 @@ export function Navigation(){
                 <NavLink className="nav_link" to="/">Home</NavLink>
             </div>
             <div className="col">
-                <NavLink className="nav_link" to="/SerieTv">Serie Tv</NavLink>
+                <NavLink className="nav_link" to="/Series">Serie Tv</NavLink>
             </div>
             <div className="col">
                 <NavLink className="nav_link" to="/Film">Film</NavLink>
             </div>
             <div className="col">
-                <NavLink className="nav_link" to="/Originali">Originali</NavLink>
+                <NavLink className="nav_link" to="/Original">Originali</NavLink>
             </div>
             <div className="col">
-                <NavLink className="nav_link" to="/AggiuntiRecente">Aggiunti di Recente</NavLink>
+                <NavLink className="nav_link" to="/Recently-add">Aggiunti di Recente</NavLink>
             </div>
             <div className="col">
-                <NavLink className="nav_link" to="/LaMiaLista">La Mia Lista</NavLink>
+                <NavLink className="nav_link" to="/MyList">La Mia Lista</NavLink>
             </div>   
         </div>
     )
