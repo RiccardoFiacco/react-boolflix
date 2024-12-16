@@ -1,5 +1,5 @@
 export function Home(){
-    return(
+    
         
         <div className="home">
          <div className="row align-items-center justify-content-center pt-5">
@@ -8,5 +8,5 @@ export function Home(){
             </div>
          </div>
         </div>
-    )
+    
 }
