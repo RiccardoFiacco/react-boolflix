@@ -24,8 +24,7 @@ export function List({ title='' }){
     }
 
     return(
-        <div className="row row-gap-3">
-        <h2 className="pt-5 pb-3 text-light" >{title}</h2>
+        <div className="row row-gap-3 pt-5 pb-3">
           {//map per creare dei paragrafi con i titoli delle serie
              list && list.map((serie, i) => {
                 return (
