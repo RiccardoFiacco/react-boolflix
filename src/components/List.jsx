@@ -12,9 +12,11 @@ export function List({ title='' }){
     }
     if(title == "Serie Tv"){
      list = tvSeries 
+     title="Serie_Tv"
     }
     if(title == "My List"){
       list = myList
+      title="My_List"
     }
 
     function addFunction(e){ //aggiorna la variabile my list 
@@ -28,7 +30,7 @@ export function List({ title='' }){
              list && list.map((serie, i) => {
                 return (
                 <div className="col-8 col-sm-6 col-md-4 col-lg-3" key={i} >
-                  <Card obj={serie} addInList = {()=>addFunction(serie)} />
+                  <Card obj={serie} objType = {title} addInList = {()=>addFunction(serie)} />
                 </div>);
               })
           }  

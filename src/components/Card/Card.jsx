@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { GlobalContext } from "../../utils/GlobalContext.js";
 
-export function Card({ obj = {}, addInList }) {
+export function Card({ obj = {}, objType, addInList }) {
 
   const { setElementInfo } = useContext(GlobalContext)
   
@@ -33,7 +33,7 @@ export function Card({ obj = {}, addInList }) {
             <p>avarage vote: {star}</p>
          
           <button className="btn btn-outline-primary" onClick={addInList}>add in your List</button>
-          <button onClick={()=>setElementInfo(obj)}><NavLink to={`/:/${id}`} state={{el:obj}}>Dettagli</NavLink></button>
+          <button onClick={()=>setElementInfo(obj)}><NavLink to={`/${objType}/${id}`} state={{el:obj}}>Dettagli</NavLink></button>
         </div>  
     </div>
     

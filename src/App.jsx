@@ -42,7 +42,7 @@ function App() {
              <Route path='/Highest-rated' Component={HighestRated}/>              
              <Route path='/Recently-add' Component={RecentlyAdd}/> 
              <Route path='/MyList' Component={MyList}/>  
-              <Route path="/:/:id" Component={Details}/>
+              <Route path="/:type/:id" Component={Details}/>
           </Route> 
         </Routes>
       </BrowserRouter>
