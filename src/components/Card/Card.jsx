@@ -1,10 +1,14 @@
 import { flagImage, imagePath, getStar } from "../../utils/util.jsx";
 import style from './Card.module.css'
 import fotoPlace from '../../assets/elementor-placeholder-image.webp'
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { GlobalContext } from "../../utils/GlobalContext.js";
 
 export function Card({ obj = {}, addInList }) {
-  const{type} = useParams();
+
+  const { setElementInfo } = useContext(GlobalContext)
+  
   const { title, original_title, original_language, vote_average, id} = obj; //destructuring 
 
   let language = flagImage(original_language); //prende l'immagine della bandiera
@@ -29,7 +33,7 @@ export function Card({ obj = {}, addInList }) {
             <p>avarage vote: {star}</p>
          
           <button className="btn btn-outline-primary" onClick={addInList}>add in your List</button>
-          <button><NavLink to={`/${type}/${id}`} state={{el:obj}}>Dettagli</NavLink></button>
+          <button onClick={()=>setElementInfo(obj)}><NavLink to={`/:/${id}`} state={{el:obj}}>Dettagli</NavLink></button>
         </div>  
     </div>
     

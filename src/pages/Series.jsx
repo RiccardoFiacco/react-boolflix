@@ -17,7 +17,7 @@ export function Series(){
         <div className="div bg-dark">
             <div className="container">
                 <Outlet/>
-                <List title={"Serie tv"}/>
+                <List title={"Serie Tv"}/>
                 <Footer/>
             </div>
         </div>

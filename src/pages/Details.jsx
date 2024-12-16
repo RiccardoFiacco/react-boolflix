@@ -1,14 +1,14 @@
-import { useLocation } from "react-router-dom";
+import { useContext } from "react";
+import { GlobalContext } from "../utils/GlobalContext";
 import { getStar, imagePath } from "../utils/util";
 import fotoPlace from '../assets/elementor-placeholder-image.webp'
 export function Details(){
     //mi serve recuperare movie o tv x chiamata
-    let location = useLocation();
-    const {title, original_title, original_language, vote_average,overview, adult, poster_path} = location.state.el
+    const { elementInfo } = useContext(GlobalContext)
+    const {title, original_title, original_language, vote_average,overview, adult, poster_path} = elementInfo
     let star = getStar(vote_average);
     let finalImg = imagePath + poster_path;
-    console.log(location.state)
-   
+    
     return(
         <div className="bg-dark">
             <div className="container text-light">
