@@ -12,7 +12,7 @@ export function HighestRated(){
 
     useEffect(() => {//use effect che al montaggio del componente invoca queste 4 funzioni   
         setUriMovie(movieDesc) //questa aggiorna il valore dell'uri dei movie
-        setUriTv(seriesDesc)//questa aggiorna il valore dell'uri delle serie 
+        setUriTv(seriesDesc)//questa aggiorna il valore dell'uri delle serie     
     }, []);// al montaggio del componente
 
     return(

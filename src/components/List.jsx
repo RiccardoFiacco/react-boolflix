@@ -10,7 +10,7 @@ export function List({ title='' }){
     if(title == "Film"){
       list = movies
     }
-    if(title == "Serie tv"){
+    if(title == "Serie Tv"){
      list = tvSeries 
     }
     if(title == "My List"){

@@ -20,7 +20,7 @@ function App() {
   const [myList, setMyList] = useState([])
   useEffect(() => {//use effect che al montaggio del componente invoca queste due funzioni
     axiosSetCall(uriMovie, setMovies); //questa recupera e aggiorna la variabile movies
-    axiosSetCall(uriTv, setTvSeries); //questa recupera e aggiorna la variabile tvSeries    
+    axiosSetCall(uriTv, setTvSeries); //questa recupera e aggiorna la variabile tvSeries  
   }, [uriMovie, uriTv]);//dipendenze al cambiamento degli uri
 
   return (
