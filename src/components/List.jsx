@@ -2,7 +2,7 @@ import { GlobalContext } from "../utils/GlobalContext";
 import { Card } from "./Card/Card";
 import { useContext } from "react";
 
-export function List({ title=''}){
+export function List({ title='' }){
 
     let {movies, tvSeries , myList, setMyList} = useContext(GlobalContext) 
     
@@ -17,7 +17,7 @@ export function List({ title=''}){
       list = myList
     }
 
-    function addFunction(e){ 
+    function addFunction(e){ //aggiorna la variabile my list 
       setMyList([...myList, e])
     }
 
@@ -28,7 +28,7 @@ export function List({ title=''}){
              list && list.map((serie, i) => {
                 return (
                 <div className="col-8 col-sm-6 col-md-4 col-lg-3" key={i} >
-                  <Card obj={serie} addInList = {()=>addFunction(serie)}/>
+                  <Card obj={serie} addInList = {()=>addFunction(serie)} />
                 </div>);
               })
           }  

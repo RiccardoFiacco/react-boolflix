@@ -1,16 +1,18 @@
-import { flagImage, imagePath } from "../../utils/util.jsx";
-import { getStar } from "../../utils/util.jsx";
+import { flagImage, imagePath, getStar } from "../../utils/util.jsx";
 import style from './Card.module.css'
 import fotoPlace from '../../assets/elementor-placeholder-image.webp'
-export function Card({ obj = {}, addInList }) {
+import { NavLink, useParams } from "react-router-dom";
 
-  const { title, original_title, original_language, vote_average} = obj; //destructuring 
+export function Card({ obj = {}, addInList }) {
+  const{type} = useParams();
+  const { title, original_title, original_language, vote_average, id} = obj; //destructuring 
 
   let language = flagImage(original_language); //prende l'immagine della bandiera
 
   let star = getStar(vote_average); //genera le stelle della valutazione
   let finalImg = imagePath + obj.poster_path; //setta l'url per recuperare l'immagine
-
+  
+  
  return (
     <div className="card relative">
 
@@ -18,17 +20,18 @@ export function Card({ obj = {}, addInList }) {
         
         <div className="hidden">
           <h3>{title}</h3>
-          <ol>
-            <li>original name: {original_title}</li>
-            <li>
+         
+            <p>original name: {original_title}</p>
+            <p>
               language: 
                {language ?  <img src={language} className={style.h_flag}/> : original_language}
-            </li>
-            <li>avarage vote: {star}</li>
-          </ol>
+            </p>
+            <p>avarage vote: {star}</p>
+         
           <button className="btn btn-outline-primary" onClick={addInList}>add in your List</button>
-        </div>
-      
+          <button><NavLink to={`/${type}/${id}`} state={{el:obj}}>Dettagli</NavLink></button>
+        </div>  
     </div>
+    
   );
 }

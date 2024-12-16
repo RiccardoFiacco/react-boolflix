@@ -10,6 +10,8 @@ import { Film } from './pages/Film.jsx';
 import { HighestRated } from './pages/HighestRated.jsx';
 import { RecentlyAdd } from './pages/RecentlyAdd.jsx';
 import { MyList } from './pages/MyList.jsx';
+import {Details} from './pages/Details.jsx';
+
 function App() {
   const [uriTv, setUriTv] = useState(uriTvBase);
   const [uriMovie, setUriMovie] = useState(uriMovieBase);
@@ -34,10 +36,11 @@ function App() {
           <Route Component={DefaultPage}>
             <Route index Component={Home}/>
              <Route path='/Series' Component={Series}/>
-            <Route path='/Film' Component={Film}/>
-            <Route path='/Highest-rated' Component={HighestRated}/>
-            <Route path='/Recently-add' Component={RecentlyAdd}/>
-            <Route path='/MyList' Component={MyList}/>
+             <Route path='/Film' Component={Film}/>              
+             <Route path='/Highest-rated' Component={HighestRated}/>              
+             <Route path='/Recently-add' Component={RecentlyAdd}/> 
+             <Route path='/MyList' Component={MyList}/>  
+              <Route path="/:type/:id" Component={Details}/>
           </Route> 
         </Routes>
       </BrowserRouter>

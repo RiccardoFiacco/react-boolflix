@@ -3,6 +3,7 @@ import { Footer } from '../components/Footer/Footer'
 import { uriMovieBase, uriTvBase } from "../utils/util";
 import { useContext, useEffect } from "react";
 import { GlobalContext } from "../utils/GlobalContext";
+import { Outlet } from "react-router-dom";
 
 export function RecentlyAdd(){
     const { setUriTv, setUriMovie } = useContext(GlobalContext) 
@@ -17,6 +18,7 @@ export function RecentlyAdd(){
     return(
         <div className="div bg-dark">
             <div className="container">
+                <Outlet/>
                 <List title={"Film"}/>
                 <List title={"Serie Tv"}/>
                 <Footer/>
