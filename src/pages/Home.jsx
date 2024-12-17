@@ -1,6 +1,5 @@
 export function Home(){
-    
-        
+    return(
         <div className="home">
          <div className="row align-items-center justify-content-center pt-5">
             <div className="col-6 text-center pt-5 fs-1">
@@ -8,5 +7,5 @@ export function Home(){
             </div>
          </div>
         </div>
-    
+        )
 }
