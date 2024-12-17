@@ -1,23 +1,29 @@
-import { useContext, useEffect, useState } from "react";
-import { GlobalContext } from "../utils/GlobalContext";
+import {  useEffect, useState } from "react";
 import { getStar, imagePath } from "../utils/util";
 import fotoPlace from '../assets/elementor-placeholder-image.webp'
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 export function Details(){
-    //mi serve recuperare movie o tv x chiamata
-    const { elementInfo } = useContext(GlobalContext)
-    const {title, original_title, original_language, vote_average,overview, adult, poster_path, id, typeOfObj} = elementInfo
-    
-    let star = getStar(vote_average); //recupero le stelle
-
-    let finalImg = imagePath + poster_path; //recupero l'immagine
+    let {id, type} = useParams() //recupero parametri dell'uri
+    let typeOfObj;
+    type == 'Serie_Tv'? typeOfObj = 'tv' : typeOfObj = 'movie';
 
     const [cast, setCast] = useState([]) //creo la variabile di stato che servira per mettere gli attori
+    const [content, setContent] = useState({})
+    const { title, original_title, original_language, vote_average,overview, adult, poster_path, genres} = content;
+   
+    let star = getStar(vote_average); //recupero le stelle
+    let finalImg = imagePath + poster_path; //recupero l'immagine
 
-    let type;
-    console.log(typeOfObj)
-    typeOfObj == 'Serie_Tv'? type = 'tv' : type = 'movie';
+    useEffect(()=>{
+        axios
+        .get(`https://api.themoviedb.org/3/${typeOfObj}/${id}?&api_key=3a55960cb8d2cc735fc2a215dc42af3e`)
+        .then((res)=>{
+            setContent(res.data) 
+        })
+        .catch((err)=>console.log(err))
+    },[])
 
     useEffect(()=>{
         axios
@@ -27,15 +33,16 @@ export function Details(){
         })
         .catch((err)=>console.log(err))
     },[])
-    
-      let actors
-      let app = cast.slice(0, 5) //prendo i primi 5
-      actors = app.map(actor => ({ //li mappo e prendo solo nome e personaggi interpretati
-          name: actor.name,
-          character: actor.character,
-      }));
+
+    let actors
+    let app = cast.slice(0, 5) //prendo i primi 5
+    actors = app.map(actor => ({ //li mappo e prendo solo nome e personaggi interpretati restituendoli come oggetto
+        name: actor.name,
+        character: actor.character,
+    }));
       
     return(
+        content && 
         <div className="bg-dark">
             <div className="container text-light">
                 <div className="row">
@@ -54,6 +61,16 @@ export function Details(){
                                 <p key={i}><strong>{name}</strong> interpreta: {character}</p>
                                 )
                             })} 
+                        </div>
+                        <div>
+                            <p>Generi:  
+                            {genres && genres.map((genre,i)=>{
+                                    return(
+                                        <span key={i}> {genre.name}</span> 
+                                    )
+                                })
+                            }
+                            </p>
                         </div>
                     </div>
                     <div className="col">
