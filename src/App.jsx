@@ -18,7 +18,7 @@ function App() {
   const [movies, setMovies] = useState([]); //creo una variabile reattiva per andare a salvare gli oggetti film
   const [tvSeries, setTvSeries] = useState([]); //creo una variabile reattiva per andare a salvare gli oggetti serie
   const [myList, setMyList] = useState([]);
-  const [elementInfo, setElementInfo] = useState({})
+  
   useEffect(() => {//use effect che al montaggio del componente invoca queste due funzioni
     axiosSetCall(uriMovie, setMovies); //questa recupera e aggiorna la variabile movies
     axiosSetCall(uriTv, setTvSeries); //questa recupera e aggiorna la variabile tvSeries  
@@ -30,8 +30,7 @@ function App() {
       uriMovie, setUriMovie, 
       movies, setMovies, 
       tvSeries, setTvSeries,
-      myList, setMyList,
-      elementInfo, setElementInfo
+      myList, setMyList
     }}>{/*usiamo un context per rendere globali a tutti i componenti quei valori*/}
       <BrowserRouter>
         <Routes>

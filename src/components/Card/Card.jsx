@@ -1,14 +1,9 @@
-import { flagImage, imagePath, getStar, axiosSetCall } from "../../utils/util.jsx";
+import { flagImage, imagePath, getStar} from "../../utils/util.jsx";
 import style from './Card.module.css'
 import fotoPlace from '../../assets/elementor-placeholder-image.webp'
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
-import { GlobalContext } from "../../utils/GlobalContext.js";
-
 
 export function Card({ obj = {}, objType, addInList }) {
-
-  const { setElementInfo } = useContext(GlobalContext)
   
   const { title, original_title, original_language, vote_average, id} = obj; //destructuring 
 
@@ -17,13 +12,8 @@ export function Card({ obj = {}, objType, addInList }) {
   let star = getStar(vote_average); //genera le stelle della valutazione
   
   let finalImg = imagePath + obj.poster_path; //setta l'url per recuperare l'immagine
-  function setterInfo(){
-    let appObj={
-      ...obj,
-      typeOfObj: objType
-    }
-    setElementInfo(appObj)
-  }
+  
+
  return (
     <div className="card relative">
 
@@ -40,7 +30,7 @@ export function Card({ obj = {}, objType, addInList }) {
             <p>avarage vote: {star}</p>
             
           <button className="btn btn-outline-primary" onClick={addInList}>add in your List</button>
-          <button onClick={()=>setterInfo()}><NavLink to={`/${objType}/${id}`} >Dettagli</NavLink></button>
+          <button><NavLink to={`/${objType}/${id}`} >Dettagli</NavLink></button>
           
         </div>  
     </div>
