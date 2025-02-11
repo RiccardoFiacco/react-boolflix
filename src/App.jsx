@@ -2,7 +2,7 @@ import './App.css';
 import { GlobalContext } from './utils/GlobalContext.js';
 import { useEffect, useState } from 'react';
 import {uriTvBase, uriMovieBase, axiosSetCall} from './utils/util.jsx'
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter,BrowserRouter, Route, Routes } from 'react-router-dom';
 import { DefaultPage } from './pages/DefaultPage.jsx';
 import { Home } from './pages/Home.jsx';
 import { Series } from './pages/Series.jsx';
@@ -32,7 +32,7 @@ function App() {
       tvSeries, setTvSeries,
       myList, setMyList
     }}>{/*usiamo un context per rendere globali a tutti i componenti quei valori*/}
-      <HashRouter>
+      <BrowserRouter basename="/react-boolflix">
         <Routes>
           <Route Component={DefaultPage}>
             <Route path="/" Component={Home}/>
@@ -44,7 +44,7 @@ function App() {
               <Route path="/:type/:id" Component={Details}/>
           </Route> 
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </GlobalContext.Provider>
   )
 }
