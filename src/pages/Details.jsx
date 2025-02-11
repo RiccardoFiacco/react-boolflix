@@ -27,7 +27,7 @@ export function Details(){
 
     useEffect(()=>{
         axios
-        .get(`https://api.themoviedb.org/3/${type}/${id}/credits?&api_key=3a55960cb8d2cc735fc2a215dc42af3e`)
+        .get(`https://api.themoviedb.org/3/${typeOfObj}/${id}/credits?&api_key=3a55960cb8d2cc735fc2a215dc42af3e`)
         .then((res)=>{
           setCast(res.data.cast)   
         })
