@@ -35,7 +35,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route Component={DefaultPage}>
-            <Route index Component={Home}/>
+            <Route path="/" Component={Home}/>
              <Route path='/Series' Component={Series}/>
              <Route path='/Film' Component={Film}/>              
              <Route path='/Highest-rated' Component={HighestRated}/>              
